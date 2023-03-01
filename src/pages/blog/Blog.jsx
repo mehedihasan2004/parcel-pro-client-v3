@@ -108,8 +108,8 @@ const Blog = () => {
               <br />
               While you focus on running your business, a professional courier
               can handle all of your warehousing and shipping needs. There are
-              many advantages of outsourcing courier services for retailers that
-              allow you to save time and money.
+              many advantages of outsourcing courier services for retailers
+              that................................
             </Typography>
           </Grid>
         </Grid>
