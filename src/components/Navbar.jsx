@@ -15,7 +15,6 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
 import { useAuthContext } from "../contexts/AuthProvider";
-import { Avatar } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -110,11 +109,6 @@ const Navbar = (props) => {
             ) : (
               <NavLink to="/login">
                 <Button sx={{ color: "primary.text" }}>Login</Button>
-              </NavLink>
-            )}
-            {user?.photoURL && (
-              <NavLink>
-                <Avatar alt="user Photo" src={user?.photoURL} />
               </NavLink>
             )}
           </Box>

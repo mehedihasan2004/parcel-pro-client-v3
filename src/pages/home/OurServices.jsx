@@ -1,10 +1,11 @@
-import { Box, Button, Grid } from "@mui/material";
-import React from "react";
+import { Box, Button, Grid, Modal, Typography } from "@mui/material";
+import React, { useState } from "react";
 import safety from "../../assets/safety.png";
 import swift1 from "../../assets/swift.png";
 import trusted from "../../assets/trusted.png";
 import vaccin from "../../assets/vaccinated.png";
 const OurServices = () => {
+  const [modal, setModal] = useState(false);
   return (
     <section>
       <div>
@@ -32,8 +33,12 @@ const OurServices = () => {
             >
               Try Us And See How Good <br></br>Our Services Are.
             </h3>
-            <Button variant="contained" sx={{ m: 0 }}>
-              Learn More
+            <Button
+              onClick={() => setModal(true)}
+              variant="contained"
+              sx={{ m: 0 }}
+            >
+              Get Started
             </Button>
           </div>
         </Box>
@@ -114,6 +119,20 @@ const OurServices = () => {
           </p>
         </Grid>
       </Grid>
+      <Modal
+        open={modal}
+        onClose={() => setModal(false)}
+        aria-labelledby="parent-modal-title"
+        aria-describedby="parent-modal-description"
+      >
+        <Box sx={{ width: 400 }}>
+          <h2 id="parent-modal-title">Text in a modal</h2>
+          <p id="parent-modal-description">
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          </p>
+          <Typography>Here will be modal actions</Typography>
+        </Box>
+      </Modal>
     </section>
   );
 };
