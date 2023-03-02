@@ -1,11 +1,25 @@
 import { Box, Button, Grid, Modal, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import safety from "../../assets/safety.png";
 import swift1 from "../../assets/swift.png";
 import trusted from "../../assets/trusted.png";
 import vaccin from "../../assets/vaccinated.png";
 const OurServices = () => {
-  const [modal, setModal] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const style = {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: 400,
+      bgcolor: 'background.paper',
+      border: '2px solid #000',
+      boxShadow: 24,
+      p: 4,
+    };
   return (
     <section>
       <div>
@@ -34,7 +48,7 @@ const OurServices = () => {
               Try Us And See How Good <br></br>Our Services Are.
             </h3>
             <Button
-              onClick={() => setModal(true)}
+              onClick={handleOpen}
               variant="contained"
               sx={{ m: 0 }}
             >
@@ -120,18 +134,28 @@ const OurServices = () => {
         </Grid>
       </Grid>
       <Modal
-        open={modal}
-        onClose={() => setModal(false)}
-        aria-labelledby="parent-modal-title"
-        aria-describedby="parent-modal-description"
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
       >
-        <Box sx={{ width: 400 }}>
-          <h2 id="parent-modal-title">Text in a modal</h2>
-          <p id="parent-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </p>
-          <Typography>Here will be modal actions</Typography>
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2" sx={{fontWeight:"bold"}}>
+            Choose your preferred way
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            If you want to send your parcel in online select online otherwise continue with manual.
+          </Typography>
+         
+          <Box style={{display:"flex", alignItems: "center",
+  justifyContent: "center", gap:"2rem",marginTop:".5rem"}}>
+          <Button variant="contained">Manual</Button>
+          <Button variant="contained">Online</Button>
+          </Box>
+         
         </Box>
+       
+       
       </Modal>
     </section>
   );
