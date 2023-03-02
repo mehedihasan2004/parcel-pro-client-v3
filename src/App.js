@@ -8,6 +8,8 @@ import ContactUs from "./pages/about_us/contact_us/ContactUs";
 import Login from "./pages/authentication/Login";
 import SignUp from "./pages/authentication/SignUp";
 import Blog from "./pages/blog/Blog";
+import ParcelInfo from "./pages/booking/online/ParcelInfo";
+import Dashboard from "./pages/dashboard/Dashboard";
 import { Home } from "./pages/home";
 import { lightTheme } from "./theme/theme";
 const App = () => {
@@ -39,6 +41,14 @@ const App = () => {
     {
       path: "login",
       element: <Login />,
+    },
+    {
+      path: "dashboard",
+      element: <Dashboard />,
+    },
+    {
+      path: "online-way",
+      element: <ParcelInfo />,
     },
   ]);
   return (
