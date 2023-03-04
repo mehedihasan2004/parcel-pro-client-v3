@@ -14,7 +14,7 @@ const SignUp = () => {
     const password = e.target.password.value;
 
     const saveUserToDB = () => {
-      fetch("http://localhost:8080/users", {
+      fetch("https://parcel-pro-server.vercel.app/users", {
         method: "POST",
         headers: {
           "content-type": "application/json",
