@@ -21,7 +21,7 @@ const drawerWidth = 240;
 const Navbar = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const { logout, user } = useAuthContext();
+  const { logout, user, navigate } = useAuthContext();
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -80,9 +80,19 @@ const Navbar = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography
+            onClick={() => navigate("/")}
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              flexGrow: 1,
+              display: {
+                xs: "none",
+                sm: "block",
+                cursor: "pointer",
+                fontWeight: "bold",
+                fontSize: "2rem",
+              },
+            }}
           >
             Parcel Pro
           </Typography>
@@ -102,9 +112,7 @@ const Navbar = (props) => {
             <NavLink to="/dashboard">
               <Button sx={{ color: "primary.text" }}>Dashboard</Button>
             </NavLink>
-            <NavLink to="/online-way">
-              <Button sx={{ color: "primary.text" }}>Online</Button>
-            </NavLink>
+
             {/* <NavLink to="/blog">
               <Button sx={{ color: "primary.text" }}>Blog</Button>
             </NavLink> */}
