@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
-  const { login } = useAuthContext();
+  const { login, navigate, from } = useAuthContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,6 +15,7 @@ const Login = () => {
       .then((userCredentials) => {
         const user = userCredentials.user;
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((err) => console.error("Error", err));
   };
@@ -55,7 +56,7 @@ const Login = () => {
           <div>
             <p style={{ fontWeight: "bold" }}>Password</p>
             <input
-              type="password"
+              type="text"
               name="password"
               required
               style={{

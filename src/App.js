@@ -8,9 +8,15 @@ import ContactUs from "./pages/about_us/contact_us/ContactUs";
 import Login from "./pages/authentication/Login";
 import SignUp from "./pages/authentication/SignUp";
 import Blog from "./pages/blog/Blog";
+import Manual from "./pages/booking/manual/Manual";
 import ParcelInfo from "./pages/booking/online/ParcelInfo";
+import CompleteOrders from "./pages/dashboard/CompleteOrders";
 import Dashboard from "./pages/dashboard/Dashboard";
+import MyOrders from "./pages/dashboard/MyOrders";
+import PendingOrders from "./pages/dashboard/PendingOrders";
+import Users from "./pages/dashboard/Users";
 import { Home } from "./pages/home";
+import AdminRoute from "./routes/AdminRoute";
 import { lightTheme } from "./theme/theme";
 const App = () => {
   const routes = useRoutes([
@@ -45,10 +51,44 @@ const App = () => {
     {
       path: "dashboard",
       element: <Dashboard />,
+      children: [
+        {
+          path: "/dashboard/users",
+          element: (
+            <AdminRoute>
+              <Users />
+            </AdminRoute>
+          ),
+        },
+        {
+          path: "/dashboard/pending-orders",
+          element: (
+            <AdminRoute>
+              <PendingOrders />
+            </AdminRoute>
+          ),
+        },
+        {
+          path: "/dashboard/complete-orders",
+          element: (
+            <AdminRoute>
+              <CompleteOrders />
+            </AdminRoute>
+          ),
+        },
+        {
+          path: "/dashboard",
+          element: <MyOrders />,
+        },
+      ],
     },
     {
       path: "online-way",
       element: <ParcelInfo />,
+    },
+    {
+      path: "manual-way",
+      element: <Manual />,
     },
   ]);
   return (

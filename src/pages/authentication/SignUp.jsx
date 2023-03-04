@@ -1,11 +1,9 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthProvider";
 
 const SignUp = () => {
-  const { signUp, updateUser } = useAuthContext();
-
-  const navigate = useNavigate();
+  const { signUp, updateUser, navigate, from } = useAuthContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +19,13 @@ const SignUp = () => {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify({ userName, email, imageUrl }),
+        body: JSON.stringify({
+          userName,
+          email,
+          imageUrl,
+          role: "user",
+          password,
+        }),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -37,7 +41,7 @@ const SignUp = () => {
         updateUser({ displayName: userName, photoURL: imageUrl })
           .then(() => {
             saveUserToDB();
-            navigate("/");
+            navigate(from, { replace: true });
           })
           .catch((err) => console.error("Error", err));
       })
@@ -108,7 +112,7 @@ const SignUp = () => {
           <div>
             <p style={{ fontWeight: "bold" }}>Password</p>
             <input
-              type="password"
+              type="text"
               name="password"
               required
               style={{

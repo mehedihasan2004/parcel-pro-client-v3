@@ -1,5 +1,6 @@
 import { Box, Button, Grid, Modal, Typography } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 import safety from "../../assets/safety.png";
 import swift1 from "../../assets/swift.png";
 import trusted from "../../assets/trusted.png";
@@ -10,16 +11,16 @@ const OurServices = () => {
   const handleClose = () => setOpen(false);
 
   const style = {
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      width: 400,
-      bgcolor: 'background.paper',
-      border: '2px solid #000',
-      boxShadow: 24,
-      p: 4,
-    };
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
   return (
     <section>
       <div>
@@ -47,11 +48,7 @@ const OurServices = () => {
             >
               Try Us And See How Good <br></br>Our Services Are.
             </h3>
-            <Button
-              onClick={handleOpen}
-              variant="contained"
-              sx={{ m: 0 }}
-            >
+            <Button onClick={handleOpen} variant="contained" sx={{ m: 0 }}>
               Get Started
             </Button>
           </div>
@@ -140,22 +137,36 @@ const OurServices = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2" sx={{fontWeight:"bold"}}>
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            sx={{ fontWeight: "bold" }}
+          >
             Choose your preferred way
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            If you want to send your parcel in online select online otherwise continue with manual.
+            If you want to send your parcel in online select online otherwise
+            continue with manual.
           </Typography>
-         
-          <Box style={{display:"flex", alignItems: "center",
-  justifyContent: "center", gap:"2rem",marginTop:".5rem"}}>
-          <Button variant="contained">Manual</Button>
-          <Button variant="contained">Online</Button>
+
+          <Box
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "2rem",
+              marginTop: ".5rem",
+            }}
+          >
+            <Link to="/manual-way">
+              <Button variant="contained">Manual</Button>
+            </Link>
+            <Link to="/online-way">
+              <Button variant="contained">Online</Button>
+            </Link>
           </Box>
-         
         </Box>
-       
-       
       </Modal>
     </section>
   );
