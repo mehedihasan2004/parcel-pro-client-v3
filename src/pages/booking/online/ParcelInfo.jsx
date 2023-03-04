@@ -22,7 +22,7 @@ const ParcelInfo = () => {
     const receiver_location = from.receiver_location.value;
     const product_weight = from.product_weight.value;
 
-    fetch(`http://localhost:8080/parcel_info`, {
+    fetch(`https://parcel-pro-server.vercel.app/parcel_info`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
