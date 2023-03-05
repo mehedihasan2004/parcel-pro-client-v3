@@ -9,7 +9,7 @@ const Login = () => {
     e.preventDefault();
 
     const email = e.target.email.value;
-    const password = e.target.email.value;
+    const password = e.target.password.value;
 
     login(email, password)
       .then((userCredentials) => {

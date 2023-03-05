@@ -13,37 +13,37 @@ const SignUp = () => {
     const imageUrl = e.target.image.value;
     const password = e.target.password.value;
 
-    const saveUserToDB = () => {
-      fetch("https://parcel-pro-server.vercel.app/users", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          userName,
-          email,
-          imageUrl,
-          role: "user",
-          password,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((err) => console.error("Error", err));
-    };
-
     signUp(email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
         console.log(user);
         updateUser({ displayName: userName, photoURL: imageUrl })
           .then(() => {
-            saveUserToDB();
+            saveUserToDB(userName, email, imageUrl, password);
             navigate(from, { replace: true });
           })
           .catch((err) => console.error("Error", err));
+      })
+      .catch((err) => console.error("Error", err));
+  };
+
+  const saveUserToDB = (userName, email, imageUrl, password) => {
+    fetch("https://parcel-pro-server.vercel.app/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userName,
+        email,
+        imageUrl,
+        role: "user",
+        password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
       })
       .catch((err) => console.error("Error", err));
   };
