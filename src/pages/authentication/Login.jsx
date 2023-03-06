@@ -9,7 +9,7 @@ const Login = () => {
     e.preventDefault();
 
     const email = e.target.email.value;
-    const password = e.target.email.value;
+    const password = e.target.password.value;
 
     login(email, password)
       .then((userCredentials) => {
@@ -87,7 +87,7 @@ const Login = () => {
             />
           </div>
           <p style={{ textAlign: "center" }}>
-            Hanen't any account{" "}
+            Haven't any account?{" "}
             <Link style={{ color: "cyan" }} to="/sign-up">
               Sign Up
             </Link>
