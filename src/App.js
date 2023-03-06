@@ -21,6 +21,7 @@ import AdminRoute from "./routes/AdminRoute";
 import { lightTheme } from "./theme/theme";
 import { ToastContainer } from "react-toastify";
 import Pay from "./pages/payment/Pay";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 const App = () => {
   const routes = useRoutes([
@@ -96,7 +97,11 @@ const App = () => {
     },
     {
       path: "online-way",
-      element: <ParcelInfo />,
+      element: (
+        <ProtectedRoute>
+          <ParcelInfo />
+        </ProtectedRoute>
+      ),
     },
     {
       path: "manual-way",

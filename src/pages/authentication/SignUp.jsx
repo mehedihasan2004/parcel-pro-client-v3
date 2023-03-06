@@ -11,17 +11,16 @@ const SignUp = () => {
     const userName = e.target.name.value;
     const email = e.target.email.value;
     const imageUrl = e.target.image.value;
-
     const password = e.target.password.value;
 
     signUp(email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
         console.log(user);
+        navigate(from, { replace: true });
         updateUser({ displayName: userName, photoURL: imageUrl })
           .then(() => {
             saveUserToDB(userName, email, imageUrl, password);
-            navigate(from, { replace: true });
           })
           .catch((err) => console.error("Error", err));
       })
