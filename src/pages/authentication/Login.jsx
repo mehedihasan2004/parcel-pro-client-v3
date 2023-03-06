@@ -87,7 +87,7 @@ const Login = () => {
             />
           </div>
           <p style={{ textAlign: "center" }}>
-            Hanen't any account{" "}
+            Haven't any account?{" "}
             <Link style={{ color: "cyan" }} to="/sign-up">
               Sign Up
             </Link>
