@@ -5,6 +5,8 @@ import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import parcelHandOver from '../../../assets/parcel-hand-over.jpg';
 
 const ParcelInfo = () => {
   const [age, setAge] = React.useState('');
@@ -12,16 +14,29 @@ const ParcelInfo = () => {
   const handleChange = (event) => {
     setAge(event.target.value);
   };
-  return <div>
+  return <Box sx={{
+    width: '100%',
+    height: {
+      lg: '100vh'
+    },
+    // bgcolor: 'red'
+    backgroundImage: `url(${parcelHandOver})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center'
+  }}>
 
-    Parcel product information
+    <Typography variant="h3" align="center">
+      Parcel product info
+    </Typography>
 
     <Box sx={{
       width: '30rem',
       margin: '10px auto',
-      background: '#dad7cd',
+      background: '#fefae0',
       padding: '20px',
-      borderRadius: '10px'
+      borderRadius: '5px',
+      // border: '2px solid red'
 
     }}>
       <form action="">
@@ -84,7 +99,7 @@ const ParcelInfo = () => {
       </form>
     </Box>
 
-  </div>;
+  </Box>;
 
 };
 
