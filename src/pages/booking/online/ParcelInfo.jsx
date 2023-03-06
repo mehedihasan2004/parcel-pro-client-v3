@@ -37,7 +37,7 @@ const ParcelInfo = () => {
         product_weight,
         parcel_type,
         payment_method,
-        parced_time: moment().format("MMM Do YY"),
+        pressed_time: moment().format("MMM Do YY"),
         state: "Pending",
       }),
     });

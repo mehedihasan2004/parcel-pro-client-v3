@@ -15,7 +15,9 @@ const PendingOrders = () => {
 
   return (
     <div>
-      <TableForPendingOrders />
+      < TableForPendingOrders pendingOrders={pendingOrders} />
+     
+      
     </div>
   );
 };
