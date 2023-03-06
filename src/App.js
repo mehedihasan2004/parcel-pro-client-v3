@@ -10,14 +10,18 @@ import SignUp from "./pages/authentication/SignUp";
 import Blog from "./pages/blog/Blog";
 import Manual from "./pages/booking/manual/Manual";
 import ParcelInfo from "./pages/booking/online/ParcelInfo";
-import CompleteOrders from "./pages/dashboard/CompleteOrders";
+import AcceptedOrders from "./pages/dashboard/AcceptedOrders";
 import Dashboard from "./pages/dashboard/Dashboard";
+import DeliveredOrders from "./pages/dashboard/DeliveredOrders";
 import MyOrders from "./pages/dashboard/MyOrders";
 import PendingOrders from "./pages/dashboard/PendingOrders";
 import Users from "./pages/dashboard/Users";
 import { Home } from "./pages/home";
 import AdminRoute from "./routes/AdminRoute";
 import { lightTheme } from "./theme/theme";
+import { ToastContainer } from "react-toastify";
+import Pay from "./pages/payment/Pay";
+
 const App = () => {
   const routes = useRoutes([
     {
@@ -69,10 +73,18 @@ const App = () => {
           ),
         },
         {
-          path: "/dashboard/complete-orders",
+          path: "/dashboard/accepted-orders",
           element: (
             <AdminRoute>
-              <CompleteOrders />
+              <AcceptedOrders />
+            </AdminRoute>
+          ),
+        },
+        {
+          path: "/dashboard/delivered-orders",
+          element: (
+            <AdminRoute>
+              <DeliveredOrders />
             </AdminRoute>
           ),
         },
@@ -90,6 +102,10 @@ const App = () => {
       path: "manual-way",
       element: <Manual />,
     },
+    {
+      path: "pay",
+      element: <Pay />,
+    },
   ]);
   return (
     <>
@@ -98,6 +114,7 @@ const App = () => {
         <div style={{ marginTop: "60px" }}>{routes}</div>
         <Footer />
         <CssBaseline />
+        <ToastContainer />
       </ThemeProvider>
     </>
   );

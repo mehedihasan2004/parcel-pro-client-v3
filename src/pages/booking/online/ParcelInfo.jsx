@@ -6,10 +6,13 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import moment from "moment";
+import { toast } from "react-toastify";
+import { useAuthContext } from "../../../contexts/AuthProvider";
 
 const ParcelInfo = () => {
   const [parcel_type, setParcelType] = useState("");
   const [payment_method, setPaymentMethod] = useState("");
+  const { navigate } = useAuthContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,8 +26,7 @@ const ParcelInfo = () => {
     const receiver_location = from.receiver_location.value;
     const product_weight = from.product_weight.value;
 
-    fetch(`https://parcel-pro-server.vercel.app/parcel_info`, {
-      mode: "no-cors",
+    fetch(`http://localhost:8080/parcel_info`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,11 +42,25 @@ const ParcelInfo = () => {
         parcel_type,
         payment_method,
         pressed_time: moment().format("MMM Do YY"),
-        state: "Pending",
+        state: "pending",
       }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Your booking is submitted !!", {
+            position: "top-right",
+            autoClose: 1500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+        }
+        navigate("/dashboard");
+      })
       .catch((err) => console.error(err));
   };
 

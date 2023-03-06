@@ -5,7 +5,7 @@ const PendingOrders = () => {
   const [pendingOrders, setPendingOrders] = useState([]);
 
   useEffect(() => {
-    fetch("https://parcel-pro-server.vercel.app/parcel_info")
+    fetch("http://localhost:8080/pending_orders")
       .then((res) => res.json())
       .then((data) => setPendingOrders(data))
       .catch((err) => console.error(err));
@@ -15,9 +15,7 @@ const PendingOrders = () => {
 
   return (
     <div>
-      < TableForPendingOrders pendingOrders={pendingOrders} />
-     
-      
+      <TableForPendingOrders pendingOrders={pendingOrders} />
     </div>
   );
 };

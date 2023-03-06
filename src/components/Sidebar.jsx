@@ -13,7 +13,6 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
-// import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../contexts/AuthProvider";
 import useAdmin from "../hooks/isAdmin";
 
@@ -145,7 +144,7 @@ export default function Sidebar() {
             <ListItem
               disablePadding
               sx={{ display: "block" }}
-              onClick={() => navigate("/dashboard/complete-orders")}
+              onClick={() => navigate("/dashboard/accepted-orders")}
             >
               <ListItemButton
                 sx={{
@@ -164,7 +163,34 @@ export default function Sidebar() {
                   <InboxIcon />
                 </ListItemIcon>
                 <ListItemText
-                  primary={"Complete Orders"}
+                  primary={"Accepted Orders"}
+                  sx={{ opacity: open ? 1 : 0 }}
+                />
+              </ListItemButton>
+            </ListItem>
+            <ListItem
+              disablePadding
+              sx={{ display: "block" }}
+              onClick={() => navigate("/dashboard/delivered-orders")}
+            >
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  <InboxIcon />
+                </ListItemIcon>
+                <ListItemText
+                  primary={"Delivere Orders"}
                   sx={{ opacity: open ? 1 : 0 }}
                 />
               </ListItemButton>
@@ -175,7 +201,7 @@ export default function Sidebar() {
           <ListItem
             disablePadding
             sx={{ display: "block" }}
-            onClick={() => navigate("/dashboard/my-orders")}
+            onClick={() => navigate("/dashboard")}
           >
             <ListItemButton
               sx={{
