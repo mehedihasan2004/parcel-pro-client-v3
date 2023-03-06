@@ -1,11 +1,9 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthProvider";
 
 const SignUp = () => {
-  const { signUp, updateUser } = useAuthContext();
-
-  const navigate = useNavigate();
+  const { signUp, updateUser, navigate, from } = useAuthContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,22 +11,8 @@ const SignUp = () => {
     const userName = e.target.name.value;
     const email = e.target.email.value;
     const imageUrl = e.target.image.value;
-    const password = e.target.password.value;
 
-    const saveUserToDB = () => {
-      fetch("http://localhost:8080/users", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ userName, email, imageUrl }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((err) => console.error("Error", err));
-    };
+    const password = e.target.password.value;
 
     signUp(email, password)
       .then((userCredentials) => {
@@ -36,10 +20,31 @@ const SignUp = () => {
         console.log(user);
         updateUser({ displayName: userName, photoURL: imageUrl })
           .then(() => {
-            saveUserToDB();
-            navigate("/");
+            saveUserToDB(userName, email, imageUrl, password);
+            navigate(from, { replace: true });
           })
           .catch((err) => console.error("Error", err));
+      })
+      .catch((err) => console.error("Error", err));
+  };
+
+  const saveUserToDB = (userName, email, imageUrl, password) => {
+    fetch("https://parcel-pro-server.vercel.app/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userName,
+        email,
+        imageUrl,
+        role: "user",
+        password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
       })
       .catch((err) => console.error("Error", err));
   };

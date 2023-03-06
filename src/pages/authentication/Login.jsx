@@ -3,18 +3,19 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
-  const { login } = useAuthContext();
+  const { login, navigate, from } = useAuthContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
-    const password = e.target.email.value;
+    const password = e.target.password.value;
 
     login(email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((err) => console.error("Error", err));
   };
@@ -86,7 +87,7 @@ const Login = () => {
             />
           </div>
           <p style={{ textAlign: "center" }}>
-            Hanen't any account{" "}
+            Haven't any account?{" "}
             <Link style={{ color: "cyan" }} to="/sign-up">
               Sign Up
             </Link>

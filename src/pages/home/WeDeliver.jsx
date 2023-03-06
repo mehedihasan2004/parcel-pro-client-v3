@@ -1,5 +1,6 @@
 import { Box, Button, Container, Grid } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 import beg from "../../assets/box.png";
 import burg from "../../assets/burg.png";
 import grocory from "../../assets/gro.png";
@@ -68,9 +69,11 @@ const WeDeliver = () => {
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
-            <Button variant="contained" sx={{ m: 0 }}>
-              Order Now
-            </Button>
+            <Link to="/online-way">
+              <Button variant="contained" sx={{ m: 0 }}>
+                Order Now
+              </Button>
+            </Link>
           </Box>
         </Grid>
         <Grid item xs={12} md={6} lg={4} sm={6}>
@@ -103,9 +106,11 @@ const WeDeliver = () => {
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
-            <Button variant="contained" sx={{ m: 0 }}>
-              Order Now
-            </Button>
+            <Link to="/online-way">
+              <Button variant="contained" sx={{ m: 0 }}>
+                Order Now
+              </Button>
+            </Link>
           </Box>
         </Grid>
         <Grid item xs={12} md={6} lg={4} sm={6}>
@@ -138,9 +143,11 @@ const WeDeliver = () => {
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
-            <Button variant="contained" sx={{ m: 0 }}>
-              Order Now
-            </Button>
+            <Link to="/online-way">
+              <Button variant="contained" sx={{ m: 0 }}>
+                Order Now
+              </Button>
+            </Link>
           </Box>
         </Grid>
       </Grid>
