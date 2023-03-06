@@ -43,7 +43,7 @@ const AcceptedOrders = () => {
   console.log(acceptedOrders);
 
   const updateState = (id) => {
-    fetch(`http://localhost:8080/delivered/${id}`, {
+    fetch(`https://parcel-pro-server.vercel.app/delivered/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const AcceptedOrders = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8080/accepted_orders")
+    fetch("https://parcel-pro-server.vercel.app/accepted_orders")
       .then((res) => res.json())
       .then((data) => setAcceptedOrders(data))
       .catch((err) => console.error(err));

@@ -42,7 +42,7 @@ const DeliveredOrders = () => {
   console.log(deliveredOrders);
 
   useEffect(() => {
-    fetch("http://localhost:8080/delivered_orders")
+    fetch("https://parcel-pro-server.vercel.app/delivered_orders")
       .then((res) => res.json())
       .then((data) => setDeliveredOrders(data))
       .catch((err) => console.error(err));
