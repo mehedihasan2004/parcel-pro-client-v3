@@ -4,7 +4,7 @@ import React from "react";
 
 const HomeBanner = () => {
   return (
-    <div style={{ position: "relative" }}>
+    <div >
       {/* <video width="100%" autoPlay muted loop src={ShipVideo}></video> */}
       <div
         style={{
