@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { Box } from "@mui/material";
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import parcelHandOver from '../../../assets/parcel-hand-over.jpg';
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -14,6 +20,32 @@ const ParcelInfo = () => {
   const [payment_method, setPaymentMethod] = useState("");
   const { navigate } = useAuthContext();
 
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+  return <Box sx={{
+    width: '100%',
+    height: {
+      lg: '100vh'
+    },
+    // bgcolor: 'red'
+    backgroundImage: `url(${parcelHandOver})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center'
+  }}>
+
+    <Typography variant="h3" align="center">
+      Parcel product info
+    </Typography>
+
+    <Box sx={{
+      width: '30rem',
+      margin: '10px auto',
+      background: '#fefae0',
+      padding: '20px',
+      borderRadius: '5px',
+      
   const handleSubmit = (e) => {
     e.preventDefault();
     const from = e.target;
@@ -63,6 +95,7 @@ const ParcelInfo = () => {
       })
       .catch((err) => console.error(err));
   };
+
 
   return (
     <div>
@@ -184,6 +217,22 @@ const ParcelInfo = () => {
             </Select>
           </Box>
 
+
+            <MenuItem value={10}>stripe</MenuItem>
+            <MenuItem value={20}>Cash on delivery</MenuItem>
+
+          </Select>
+        </Box>
+
+        <Button type="submit" variant="contained" size="large">
+          Submit
+        </Button>
+      </form>
+    </Box>
+
+  </Box>;
+
+
           <Box sx={{ display: "flex", justifyContent: "end" }}>
             <Button type="submit" variant="contained" size="large">
               Submit
@@ -193,6 +242,7 @@ const ParcelInfo = () => {
       </Box>
     </div>
   );
+
 };
 
 export default ParcelInfo;
