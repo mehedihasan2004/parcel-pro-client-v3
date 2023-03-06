@@ -37,7 +37,7 @@ const columns = [
 
 export default function TableForPendingOrders({ pendingOrders }) {
   const updateState = (id) => {
-    fetch(`http://localhost:8080/accept/${id}`, {
+    fetch(`https://parcel-pro-server.vercel.app/accept/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
