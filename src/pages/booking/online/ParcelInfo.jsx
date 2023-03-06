@@ -14,6 +14,7 @@ const ParcelInfo = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const from = e.target;
+
     const sender_email = from.sender_email.value;
     const sender_phone = from.sender_phone.value;
     const receiver_email = from.receiver_email.value;
@@ -23,9 +24,10 @@ const ParcelInfo = () => {
     const product_weight = from.product_weight.value;
 
     fetch(`https://parcel-pro-server.vercel.app/parcel_info`, {
+      mode: "no-cors",
       method: "POST",
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         sender_email,
@@ -40,9 +42,12 @@ const ParcelInfo = () => {
         parced_time: moment().format("MMM Do YY"),
         state: "Pending",
       }),
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.error(err));
   };
-  console.log(moment().format("MMM Do YY"));
+
   return (
     <div>
       Parcel product information
@@ -55,7 +60,7 @@ const ParcelInfo = () => {
           borderRadius: "10px",
         }}
       >
-        <form action="" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <Box
             sx={{
               display: "flex",

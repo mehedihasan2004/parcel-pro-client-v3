@@ -1,15 +1,14 @@
+import React from "react";
 import {
   Button,
   Card,
   CardActions,
-  FormGroup,
   Grid,
   TextareaAutosize,
   TextField,
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
 
 const LetsGetConnected = () => {
   return (
@@ -34,30 +33,39 @@ const LetsGetConnected = () => {
               <span style={{ color: "#0076BE" }}>Ready?</span> Let’s Get
               Connected
             </Typography>
-            <FormGroup sx={{ bgcolor: "white", px: "1rem" }}>
+            <form
+              action="https://formspree.io/f/xknabyng"
+              method="POST"
+              style={{ backgroundColor: "white", padding: "0 1rem" }}
+            >
               <TextField
-                sx={{ mb: "1rem" }}
+                name="name"
+                sx={{ mb: "1rem", width: "100%" }}
                 label="Name:"
                 placeholder="Enter Your Name"
               />
               <TextField
-                sx={{ mb: "1rem" }}
+                name="email"
+                sx={{ mb: "1rem", width: "100%" }}
                 label="Email Id:"
                 placeholder="Enter Your Eamil"
               />
               <TextField
-                sx={{ mb: "1rem" }}
+                name="contact_no"
+                sx={{ mb: "1rem", width: "100%" }}
                 label="Contact No:"
                 placeholder="Enter Your Contact No"
               />
               <TextareaAutosize
-                style={{ padding: "1rem" }}
+                name="message"
+                style={{ padding: "1rem", width: "100%" }}
                 label="Details"
                 minRows={5}
                 placeholder="Enter Your Details"
               />
               <CardActions>
                 <Button
+                  type="submit"
                   style={{ margin: "auto", width: "50%" }}
                   sx={{
                     bgcolor: "#4E9FE5",
@@ -69,7 +77,7 @@ const LetsGetConnected = () => {
                   Send Message
                 </Button>
               </CardActions>
-            </FormGroup>
+            </form>
           </Card>
         </Grid>
       </Grid>

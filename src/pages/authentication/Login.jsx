@@ -56,7 +56,7 @@ const Login = () => {
           <div>
             <p style={{ fontWeight: "bold" }}>Password</p>
             <input
-              type="text"
+              type="password"
               name="password"
               required
               style={{

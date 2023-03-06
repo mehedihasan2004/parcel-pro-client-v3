@@ -11,6 +11,7 @@ const SignUp = () => {
     const userName = e.target.name.value;
     const email = e.target.email.value;
     const imageUrl = e.target.image.value;
+
     const password = e.target.password.value;
 
     signUp(email, password)
@@ -112,7 +113,7 @@ const SignUp = () => {
           <div>
             <p style={{ fontWeight: "bold" }}>Password</p>
             <input
-              type="text"
+              type="password"
               name="password"
               required
               style={{
