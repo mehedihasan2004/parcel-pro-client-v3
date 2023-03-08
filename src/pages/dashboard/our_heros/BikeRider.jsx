@@ -39,7 +39,7 @@ const BikeRider = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/biker_orders")
+    fetch("https://parcel-pro-server.vercel.app/biker_orders")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
