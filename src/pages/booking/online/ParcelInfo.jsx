@@ -6,6 +6,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import moment from "moment";
+import onlineDelivery from '../../../assets/online-delivery.jpg';
 import { toast } from "react-toastify";
 import { useAuthContext } from "../../../contexts/AuthProvider";
 
@@ -66,15 +67,34 @@ const ParcelInfo = () => {
   };
 
   return (
-    <div>
-      <Typography>Parcel product information</Typography>
+    <Box sx={{
+      height: '100vh',
+      backgroundImage: `url('https://static.vecteezy.com/system/resources/previews/001/990/179/original/online-delivery-service-background-concept-e-commerce-concept-red-scooter-smartphone-and-map-pin-illustration-free-vector.jpg')`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      padding: {
+        lg: '3rem 7rem',
+        sm: '3rem 7rem'
+      }
+    }}>
+      
       <Box
         sx={{
-          width: "30rem",
-          margin: "10px auto",
-          background: "#dad7cd",
-          padding: "20px",
+          width: "25rem",
+          height: {
+           lg: '80vh',
+           md: '80vh'
+          },
+          background: "#ffffff",
+          padding: "1rem",
           borderRadius: "10px",
+          // marginTop: '5rem',
+          // marginLeft: {
+          //  lg: '4rem'
+          // },
+          // margin: '70px 100px'
+
         }}
       >
         <form onSubmit={handleSubmit}>
@@ -192,7 +212,7 @@ const ParcelInfo = () => {
           </Box>
         </form>
       </Box>
-    </div>
+    </Box>
   );
 };
 
