@@ -1,7 +1,15 @@
 import { Box, Button, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import truck from "../../assets/truck05.jpg";
 const FreightCalculate = () => {
+  const [weight, setWeight] = useState(0);
+  const [total, setTotal] = useState(0);
+
+  const calculate = () => {
+    setTotal(weight * 80);
+  };
+
   return (
     <section style={{ margin: "60px 0px" }}>
       <Box
@@ -35,19 +43,17 @@ const FreightCalculate = () => {
           <Typography variant="h6" sx={{ py: 2 }}>
             FCL Container Type
           </Typography>
-          <select
+          <input
+            onChange={(e) => setWeight(e.target.value)}
+            name="product_weight"
+            type="number"
+            required
             style={{
               border: "1px solid gray",
               padding: "8px 30px",
               width: "440px",
             }}
-          >
-            <option value="">Select</option>
-            <option value="20ft">20 FT</option>
-            <option value="30ft">30 FT</option>
-            <option value="50ft">50 FT</option>
-            <option value="100ft">100 FT</option>
-          </select>
+          />
           <Typography variant="h6" sx={{ py: 2 }}>
             Type Of Commodity
           </Typography>
@@ -68,6 +74,7 @@ const FreightCalculate = () => {
             sx={{
               display: "flex",
               justifyContent: "space-between",
+              gap: "1rem",
             }}
           >
             <Button
@@ -82,10 +89,11 @@ const FreightCalculate = () => {
             >
               Total :{" "}
               <span style={{ color: "secondary.main", paddingLeft: "5px" }}>
-                $00
+                $ {total}
               </span>
             </Button>
             <Button
+              onClick={calculate}
               variant="contained"
               sx={{
                 border: "1px solid gray",
@@ -95,9 +103,24 @@ const FreightCalculate = () => {
                 mt: 4,
               }}
             >
-              Book Now
+              Calculate
             </Button>
           </Box>
+          <Link to="/online-way">
+            <Button
+              variant="contained"
+              sx={{
+                border: "1px solid gray",
+                color: "white",
+                px: 4,
+                py: 1,
+                mt: 4,
+                width: "100%",
+              }}
+            >
+              Book Now
+            </Button>
+          </Link>
         </Box>
       </Box>
     </section>
