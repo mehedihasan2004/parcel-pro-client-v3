@@ -15,6 +15,7 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import { useAuthContext } from "../contexts/AuthProvider";
 import useAdmin from "../hooks/isAdmin";
+import { useQuery } from "@tanstack/react-query";
 
 const drawerWidth = 240;
 
@@ -70,6 +71,17 @@ export default function Sidebar() {
   const [open, setOpen] = React.useState(true);
   const [isAdmin] = useAdmin(user?.email);
 
+  const { data: rider = [] } = useQuery({
+    queryKey: ["user"],
+    queryFn: async () => {
+      const res = await fetch(
+        `http://localhost:8080/rider?email=${user?.email}`
+      );
+      const data = res.json();
+      return data;
+    },
+  });
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -85,6 +97,95 @@ export default function Sidebar() {
           </IconButton>
         </DrawerHeader>
         <Divider />
+
+        {rider.user_category === "cycle-rider" && (
+          <ListItem
+            disablePadding
+            sx={{ display: "block" }}
+            onClick={() => navigate("/dashboard/cycle-rider")}
+          >
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary={"Cycle Rider"}
+                sx={{ opacity: open ? 1 : 0 }}
+              />
+            </ListItemButton>
+          </ListItem>
+        )}
+        {rider.user_category === "bike-rider" && (
+          <ListItem
+            disablePadding
+            sx={{ display: "block" }}
+            onClick={() => navigate("/dashboard/bike-rider")}
+          >
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary={"Bike Rider"}
+                sx={{ opacity: open ? 1 : 0 }}
+              />
+            </ListItemButton>
+          </ListItem>
+        )}
+        {rider.user_category === "pickup-driver" && (
+          <ListItem
+            disablePadding
+            sx={{ display: "block" }}
+            onClick={() => navigate("/dashboard/pickup-driver")}
+          >
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary={"Pick Up Driver"}
+                sx={{ opacity: open ? 1 : 0 }}
+              />
+            </ListItemButton>
+          </ListItem>
+        )}
+
         {isAdmin && (
           <List>
             <ListItem

@@ -1,9 +1,12 @@
-import React from "react";
+import { MenuItem, Select } from "@mui/material";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthProvider";
 
 const SignUp = () => {
   const { signUp, updateUser, navigate, from } = useAuthContext();
+
+  const [user_category, setUserCategory] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,14 +23,14 @@ const SignUp = () => {
         navigate(from, { replace: true });
         updateUser({ displayName: userName, photoURL: imageUrl })
           .then(() => {
-            saveUserToDB(userName, email, imageUrl, password);
+            saveUserToDB(userName, email, imageUrl, password, user_category);
           })
           .catch((err) => console.error("Error", err));
       })
       .catch((err) => console.error("Error", err));
   };
 
-  const saveUserToDB = (userName, email, imageUrl, password) => {
+  const saveUserToDB = (userName, email, imageUrl, password, user_category) => {
     fetch("http://localhost:8080/users", {
       method: "POST",
       headers: {
@@ -39,6 +42,7 @@ const SignUp = () => {
         imageUrl,
         role: "user",
         password,
+        user_category,
       }),
     })
       .then((res) => res.json())
@@ -96,7 +100,7 @@ const SignUp = () => {
             />
           </div>
           <div>
-            <p style={{ fontWeight: "bold" }}>Image Url</p>
+            <p style={{ fontWeight: "bold" }}>ImageUrl</p>
             <input
               type="text"
               name="image"
@@ -109,6 +113,19 @@ const SignUp = () => {
               }}
             />
           </div>
+          <Select
+            name="user_category"
+            labelId="demo-simple-select-standard-label"
+            id="demo-simple-select-standard"
+            onChange={(e) => setUserCategory(e.target.value)}
+            label="User Type"
+            style={{ width: "100%" }}
+          >
+            <MenuItem value="user">User</MenuItem>
+            <MenuItem value="cycle-rider">Cycle Rider</MenuItem>
+            <MenuItem value="bike-rider">Bike Rider</MenuItem>
+            <MenuItem value="pickup-driver">Pick-Up Driver</MenuItem>
+          </Select>
           <div>
             <p style={{ fontWeight: "bold" }}>Password</p>
             <input
