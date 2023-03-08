@@ -75,7 +75,7 @@ export default function Sidebar() {
     queryKey: ["user"],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:8080/rider?email=${user?.email}`
+        `https://parcel-pro-server.vercel.app/rider?email=${user?.email}`
       );
       const data = res.json();
       return data;

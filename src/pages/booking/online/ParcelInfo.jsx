@@ -6,7 +6,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import moment from "moment";
-import onlineDelivery from '../../../assets/online-delivery.jpg';
+import onlineDelivery from "../../../assets/online-delivery.jpg";
 import { toast } from "react-toastify";
 import { useAuthContext } from "../../../contexts/AuthProvider";
 
@@ -27,7 +27,7 @@ const ParcelInfo = () => {
     const receiver_location = from.receiver_location.value;
     const product_weight = from.product_weight.value;
 
-    fetch(`http://localhost:8080/parcel_info`, {
+    fetch(`https://parcel-pro-server.vercel.app/parcel_info`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,24 +67,25 @@ const ParcelInfo = () => {
   };
 
   return (
-    <Box sx={{
-      height: '100vh',
-      backgroundImage: `url('https://static.vecteezy.com/system/resources/previews/001/990/179/original/online-delivery-service-background-concept-e-commerce-concept-red-scooter-smartphone-and-map-pin-illustration-free-vector.jpg')`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      padding: {
-        lg: '3rem 7rem',
-        sm: '3rem 7rem'
-      }
-    }}>
-      
+    <Box
+      sx={{
+        height: "100vh",
+        backgroundImage: `url('https://static.vecteezy.com/system/resources/previews/001/990/179/original/online-delivery-service-background-concept-e-commerce-concept-red-scooter-smartphone-and-map-pin-illustration-free-vector.jpg')`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        padding: {
+          lg: "3rem 7rem",
+          sm: "3rem 7rem",
+        },
+      }}
+    >
       <Box
         sx={{
           width: "25rem",
           height: {
-           lg: '80vh',
-           md: '80vh'
+            lg: "80vh",
+            md: "80vh",
           },
           background: "#ffffff",
           padding: "1rem",
@@ -94,7 +95,6 @@ const ParcelInfo = () => {
           //  lg: '4rem'
           // },
           // margin: '70px 100px'
-
         }}
       >
         <form onSubmit={handleSubmit}>

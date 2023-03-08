@@ -5,7 +5,7 @@ const useAdmin = (email) => {
   const [isAdminLoading, setIsAdminLoading] = useState(true);
   useEffect(() => {
     if (email) {
-      fetch(`http://localhost:8080/admin/${email}`)
+      fetch(`https://parcel-pro-server.vercel.app/admin/${email}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
