@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -38,14 +38,14 @@ const columns = [
 const BikeRider = () => {
   const [orders, setOrders] = useState([]);
 
-  const updateState = (id) => {
+  useEffect(() => {
     fetch("http://localhost:8080/biker_orders")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        setOrders(data);
       })
       .catch((err) => console.log(err));
-  };
+  }, []);
 
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
@@ -77,12 +77,7 @@ const BikeRider = () => {
                   </TableCell>
                   <TableCell style={{ textAlign: "center" }}>
                     {" "}
-                    <Button
-                      onClick={() => updateState(row._id)}
-                      variant="outlined"
-                    >
-                      Accept
-                    </Button>
+                    <Button variant="outlined">Accept</Button>
                   </TableCell>
                 </TableRow>
               );

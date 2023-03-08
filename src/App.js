@@ -22,6 +22,9 @@ import { lightTheme } from "./theme/theme";
 import { ToastContainer } from "react-toastify";
 import Pay from "./pages/payment/Pay";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import BikeRider from "./pages/dashboard/our_heros/BikeRider";
+import PickUpDriver from "./pages/dashboard/our_heros/PickUpDriver";
+import CycleRider from "./pages/dashboard/our_heros/CycleRider";
 
 const App = () => {
   const routes = useRoutes([
@@ -93,6 +96,18 @@ const App = () => {
         {
           path: "/dashboard",
           element: <MyOrders />,
+        },
+        {
+          path: "/dashboard/cycle-rider",
+          element: <CycleRider />,
+        },
+        {
+          path: "/dashboard/bike-rider",
+          element: <BikeRider />,
+        },
+        {
+          path: "/dashboard/pickup-driver",
+          element: <PickUpDriver />,
         },
       ],
     },
