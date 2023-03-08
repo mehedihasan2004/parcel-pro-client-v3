@@ -13,7 +13,7 @@ const JoinTheCrew = () => {
         },
         {
           id: 2,
-          name: "Motocycle Rider",
+          name: "Motorcycle Rider",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
           img: "https://kitpro.site/delivey/wp-content/uploads/sites/70/2022/02/vespfix.png",
