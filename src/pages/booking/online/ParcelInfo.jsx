@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -66,7 +66,7 @@ const ParcelInfo = () => {
 
   return (
     <div>
-      Parcel product information
+      <Typography>Parcel product information</Typography>
       <Box
         sx={{
           width: "30rem",
