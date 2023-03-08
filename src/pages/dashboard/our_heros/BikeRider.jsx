@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-} from "@mui/material";
-import { useAuthContext } from "../../contexts/AuthProvider";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import Paper from "@mui/material/Paper";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import { Button } from "@mui/material";
+import { toast } from "react-toastify";
 
 const columns = [
   { id: "name", label: "Sender-Email", minWidth: 170 },
@@ -38,16 +35,17 @@ const columns = [
   },
 ];
 
-const MyOrders = () => {
-  const { user } = useAuthContext();
-  const [myOrders, setMyOrders] = useState([]);
+const BikeRider = () => {
+  const [orders, setOrders] = useState([]);
 
-  useEffect(() => {
-    fetch(`http://localhost:8080/my_orders?email=${user?.email}`)
+  const updateState = (id) => {
+    fetch("http://localhost:8080/biker_orders")
       .then((res) => res.json())
-      .then((data) => setMyOrders(data))
-      .catch((err) => console.error("Error", err));
-  }, [user]);
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
@@ -66,22 +64,25 @@ const MyOrders = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {myOrders.map((order) => {
+            {orders.map((row) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={order.code}>
-                  <TableCell>{order.sender_email}</TableCell>
-                  <TableCell>{order.payment_method}</TableCell>
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableCell>{row.sender_email}</TableCell>
+                  <TableCell>{row.payment_method}</TableCell>
                   <TableCell style={{ textAlign: "center" }}>
-                    {order.product_weight}
+                    {row.product_weight}
                   </TableCell>
                   <TableCell style={{ textAlign: "center" }}>
-                    {order.state}
+                    {row.state}
                   </TableCell>
                   <TableCell style={{ textAlign: "center" }}>
                     {" "}
-                    <Link to="/pay">
-                      <Button variant="outlined">Pay</Button>
-                    </Link>
+                    <Button
+                      onClick={() => updateState(row._id)}
+                      variant="outlined"
+                    >
+                      Accept
+                    </Button>
                   </TableCell>
                 </TableRow>
               );
@@ -93,4 +94,4 @@ const MyOrders = () => {
   );
 };
 
-export default MyOrders;
+export default BikeRider;
