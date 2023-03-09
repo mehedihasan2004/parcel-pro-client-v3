@@ -52,7 +52,7 @@ const BestPrice = () => {
   return (
     <Container maxWidth="xl">
       <Box sx={{ textAlign: "center" }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography>
           Get The{" "}
           <span style={{ fontWeight: "bold", color: "primary.main" }}>
             Best Prices
