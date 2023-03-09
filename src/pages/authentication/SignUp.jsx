@@ -1,9 +1,10 @@
-import { MenuItem, Select } from "@mui/material";
+import { Box, Button, MenuItem, Select } from "@mui/material";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthProvider";
 import { auth } from "../../firebase/firebase.config";
+import Typography from '@mui/material/Typography';
 
 const SignUp = () => {
   const { signUp, updateUser, navigate, from } = useAuthContext();
@@ -34,7 +35,7 @@ const SignUp = () => {
 
   const googleLogin = () => {
     signInWithPopup(auth, provider)
-      .then(() => {})
+      .then(() => { })
       .catch((err) => console.error("Error", err));
   };
 
@@ -121,13 +122,14 @@ const SignUp = () => {
               }}
             />
           </div>
+          <p style={{ fontWeight: "bold" }}>Account type</p>
           <Select
             name="user_category"
             labelId="demo-simple-select-standard-label"
             id="demo-simple-select-standard"
             onChange={(e) => setUserCategory(e.target.value)}
             label="User Type"
-            style={{ width: "100%" }}
+            style={{ width: "100%", }}
           >
             <MenuItem value="user">User</MenuItem>
             <MenuItem value="cycle-rider">Cycle Rider</MenuItem>
@@ -175,8 +177,13 @@ const SignUp = () => {
             </Link>
           </p>
         </form>
-        <div>Or</div>
-        <button onClick={googleLogin}>Continue With Google</button>
+        <Typography align="center">Or</Typography>
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'center'
+        }}>
+          <Button variant="contained" onClick={googleLogin}>Continue With Google</Button>
+        </Box>
       </div>
     </div>
   );

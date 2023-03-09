@@ -25,9 +25,7 @@ const Home = () => {
   return (
     <>
     <HomeBanner/>
-      <Container>
-        <OurServices />
-      </Container>
+      
       <Container>
         <BestServices />
       </Container>
@@ -65,6 +63,9 @@ const Home = () => {
       </Container>
       <Container>
         <YourExpectation />
+      </Container>
+      <Container>
+        <OurServices />
       </Container>
       <Container>
         <WhyChooseUs />
