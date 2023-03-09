@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -36,27 +36,41 @@ const columns = [
   },
 ];
 
-const BikeRider = () => {
-  const { data: orders = [] } = useQuery({
-    queryKey: [],
+const Riders = () => {
+  const { data: riders = [] } = useQuery({
+    queryKey: [""],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:8080/biker_orders`);
-      const data = await res.json();
-      if (data) {
-        toast.success("Order Accepted !!", {
-          position: "top-right",
-          autoClose: 1500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        });
-      }
+      const res = await fetch("http://localhost:8080/riders");
+      const data = res.json();
       return data;
     },
   });
+
+  const updateState = (id) => {
+    fetch(`http://localhost:8080/riders/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          toast.info("Rider Added !!", {
+            position: "top-right",
+            autoClose: 1500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+        }
+      })
+      .catch((err) => console.error(err));
+  };
 
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
@@ -75,20 +89,25 @@ const BikeRider = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {orders.map((row) => {
+            {riders.map((row) => {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                  <TableCell>{row.sender_email}</TableCell>
-                  <TableCell>{row.payment_method}</TableCell>
+                  <TableCell>{row.jobType}</TableCell>
+                  <TableCell>{row.name}</TableCell>
                   <TableCell style={{ textAlign: "center" }}>
-                    {row.product_weight}
+                    {row.email}
                   </TableCell>
                   <TableCell style={{ textAlign: "center" }}>
                     {row.state}
                   </TableCell>
                   <TableCell style={{ textAlign: "center" }}>
                     {" "}
-                    <Button variant="outlined">Accept</Button>
+                    <Button
+                      onClick={() => updateState(row._id)}
+                      variant="outlined"
+                    >
+                      Accept
+                    </Button>
                   </TableCell>
                 </TableRow>
               );
@@ -100,4 +119,4 @@ const BikeRider = () => {
   );
 };
 
-export default BikeRider;
+export default Riders;

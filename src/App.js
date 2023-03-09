@@ -25,6 +25,7 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import BikeRider from "./pages/dashboard/our_heros/BikeRider";
 import PickUpDriver from "./pages/dashboard/our_heros/PickUpDriver";
 import CycleRider from "./pages/dashboard/our_heros/CycleRider";
+import Riders from "./pages/dashboard/Riders";
 
 const App = () => {
   const routes = useRoutes([
@@ -92,7 +93,14 @@ const App = () => {
             </AdminRoute>
           ),
         },
-
+        {
+          path: "/dashboard/riders",
+          element: (
+            <AdminRoute>
+              <Riders />
+            </AdminRoute>
+          ),
+        },
         {
           path: "/dashboard",
           element: <MyOrders />,

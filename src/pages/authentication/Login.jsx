@@ -1,9 +1,12 @@
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthProvider";
+import { auth } from "../../firebase/firebase.config";
 
 const Login = () => {
   const { login, navigate, from } = useAuthContext();
+  const provider = new GoogleAuthProvider();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,6 +20,12 @@ const Login = () => {
         console.log(user);
         navigate(from, { replace: true });
       })
+      .catch((err) => console.error("Error", err));
+  };
+
+  const googleLogin = () => {
+    signInWithPopup(auth, provider)
+      .then(() => {})
       .catch((err) => console.error("Error", err));
   };
 
@@ -93,6 +102,8 @@ const Login = () => {
             </Link>
           </p>
         </form>
+        <div>Or</div>
+        <button onClick={googleLogin}>Continue With Google</button>
       </div>
     </div>
   );
