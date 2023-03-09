@@ -3,6 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthProvider";
 import { auth } from "../../firebase/firebase.config";
+import Typography from '@mui/material/Typography';
+import { Box, Button } from "@mui/material";
 
 const Login = () => {
   const { login, navigate, from } = useAuthContext();
@@ -86,24 +88,30 @@ const Login = () => {
                 fontSize: "1rem",
                 padding: "0 1rem",
                 marginTop: "1rem",
-                backgroundColor: "cyan",
+                backgroundColor: "#0076BE",
                 border: "none",
                 borderRadius: "6px",
                 fontWeight: "bold",
                 textAlign: "center",
                 cursor: "pointer",
+                color: '#ffffff'
               }}
             />
           </div>
           <p style={{ textAlign: "center" }}>
             Haven't any account?{" "}
-            <Link style={{ color: "cyan" }} to="/sign-up">
+            <Link style={{ color: "#0076BE" }} to="/sign-up">
               Sign Up
             </Link>
           </p>
         </form>
-        <div>Or</div>
-        <button onClick={googleLogin}>Continue With Google</button>
+        <Typography align="center">Or</Typography>
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'center'
+        }}>
+          <Button variant="contained" onClick={googleLogin}>Continue With Google</Button>
+        </Box>
       </div>
     </div>
   );
