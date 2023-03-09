@@ -47,13 +47,11 @@ const YourQueries = () => {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography>Lorem ipsum dolor sit amet?</Typography>
+                  <Typography>How do you take orders?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
+                    We take order by mannually and online base. You can choose any one option to so that we can take your order in time and place it accordingly. 
                   </Typography>
                 </AccordionDetails>
               </Accordion>
@@ -64,14 +62,12 @@ const YourQueries = () => {
                   id="panel2a-header"
                 >
                   <Typography>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing.?
+                    What are the payment method?
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
+                    We recieve payment by Stripe and Bkash and Cash on Delivery. We prefer your available method to pay service charges.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
@@ -82,14 +78,12 @@ const YourQueries = () => {
                   id="panel2a-header"
                 >
                   <Typography>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing.?
+                    How many points do you have?
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
+                    We have 1 central office, 6 sub office and 240 service points to reach to our clients easily.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
@@ -100,14 +94,12 @@ const YourQueries = () => {
                   id="panel2a-header"
                 >
                   <Typography>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing.?
+                    Whats the pirce you charge for service?
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
+                    It depends on how your products or goods weight is. Under 10 kg we recommend you to choose bike rider to delivery your products near your areas or within the selected areas.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
@@ -118,14 +110,12 @@ const YourQueries = () => {
                   id="panel2a-header"
                 >
                   <Typography>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing.?
+                    How long it takes to deliver goods?
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
+                    We deliver goods within 24 hours in divisional areas. But overall Banlgadesh it takes minimum 3 days to deliver finally.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
@@ -136,14 +126,12 @@ const YourQueries = () => {
                   id="panel2a-header"
                 >
                   <Typography>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing.?
+                    Do you have technical staff to hanlde immediate disorder?
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
+                    We have fully paid staff to handle immediate disorder in our supply chain. So dont Worry, Count on us. We have brand values to satisfy you and make your money and time worth. 
                   </Typography>
                 </AccordionDetails>
               </Accordion>

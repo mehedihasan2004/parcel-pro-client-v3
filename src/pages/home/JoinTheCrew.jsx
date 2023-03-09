@@ -8,21 +8,21 @@ const JoinTheCrew = () => {
       id: 1,
       name: "Cycle Rider",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+        "Chose your perfect rider. This is the cheapest ride for you.",
       img: "https://kitpro.site/delivey/wp-content/uploads/sites/70/2022/02/bikefix.png",
     },
     {
       id: 2,
       name: "Bike Rider",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+        "For a shorter long distance, Chose the options to make order works.",
       img: "https://kitpro.site/delivey/wp-content/uploads/sites/70/2022/02/vespfix.png",
     },
     {
       id: 3,
       name: "Pickup Driver",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+        "For weighted goods, Choose the best pickup driver, These will be best for overall bangladesh to deliver.",
       img: "https://kitpro.site/delivey/wp-content/uploads/sites/70/2022/02/carfix.png",
     },
   ];

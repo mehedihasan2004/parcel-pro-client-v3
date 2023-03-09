@@ -25,7 +25,7 @@ const MobileApp = () => {
                 Order From Our Apps And Get Special Offer
                 </Typography>
                 <Typography variant='string' gutterBottom>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies tincidunt nulla vel cursus. Fusce egestas quis est non feugiat. Maecenas faucibus nunc in enim fringilla semper.
+                You can get our app from Play store and App store. Please download from following lingks. 
                 </Typography>
                 <Box sx={{marginTop: '30px'}}>
                     <Box  style={{display: 'flex', height: '30px', width: '250px', justifyContent: "space-between", alignItems: 'center', gap: '10px', marginTop: '20px'}}>
