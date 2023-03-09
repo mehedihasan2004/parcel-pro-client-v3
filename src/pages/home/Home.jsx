@@ -4,6 +4,7 @@ import {
   BestPrice,
   BestServices,
   FreightCalculate,
+  HomeBanner,
   JoinTheCrew,
   MobileApp,
   OurExperience,
@@ -23,6 +24,7 @@ import TryCartogon from "./TryCartogon";
 const Home = () => {
   return (
     <>
+    <HomeBanner/>
       <Container>
         <OurServices />
       </Container>
@@ -57,9 +59,7 @@ const Home = () => {
       <Container>
         <ShipmentBook />
       </Container>
-      <Container>
-        <OurTalent />
-      </Container>
+      
       <Container>
         <RecentArticles />
       </Container>

@@ -98,19 +98,19 @@ const Navbar = (props) => {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <NavLink to="/">
-              <Button sx={{ color: "primary.text" }}>Home</Button>
+              <Button style={{ color: "#ffffff", textDecoration: 'none' }}>Home</Button>
             </NavLink>
             <NavLink to="/about_us">
-              <Button sx={{ color: "primary.text" }}>About Us</Button>
+              <Button sx={{ color: "#ffffff", }}>About Us</Button>
             </NavLink>
             <NavLink to="/about_us_careers">
-              <Button sx={{ color: "primary.text" }}>Careers</Button>
+              <Button sx={{ color: "#ffffff", }}>Careers</Button>
             </NavLink>
             {/* <NavLink to="/contact">
               <Button sx={{ color: "primary.text" }}>Contact</Button>
             </NavLink> */}
             <NavLink to="/dashboard">
-              <Button sx={{ color: "primary.text" }}>Dashboard</Button>
+              <Button sx={{ color: "#ffffff", }}>Dashboard</Button>
             </NavLink>
 
             {/* <NavLink to="/blog">
@@ -118,11 +118,11 @@ const Navbar = (props) => {
             </NavLink> */}
             {user ? (
               <NavLink onClick={logout} to="/">
-                <Button sx={{ color: "primary.text" }}>Logout</Button>
+                <Button sx={{ color: "#ffffff", }}>Logout</Button>
               </NavLink>
             ) : (
               <NavLink to="/login">
-                <Button sx={{ color: "primary.text" }}>Login</Button>
+                <Button sx={{ color: "#ffffff", }}>Login</Button>
               </NavLink>
             )}
           </Box>
