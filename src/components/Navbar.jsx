@@ -106,16 +106,16 @@ const Navbar = (props) => {
             <NavLink to="/about_us_careers">
               <Button sx={{ color: "primary.text" }}>Careers</Button>
             </NavLink>
-            {/* <NavLink to="/contact">
+            <NavLink to="/contact">
               <Button sx={{ color: "primary.text" }}>Contact</Button>
-            </NavLink> */}
+            </NavLink>
             <NavLink to="/dashboard">
               <Button sx={{ color: "primary.text" }}>Dashboard</Button>
             </NavLink>
 
-            {/* <NavLink to="/blog">
+            <NavLink to="/blog">
               <Button sx={{ color: "primary.text" }}>Blog</Button>
-            </NavLink> */}
+            </NavLink>
             {user ? (
               <NavLink onClick={logout} to="/">
                 <Button sx={{ color: "primary.text" }}>Logout</Button>
