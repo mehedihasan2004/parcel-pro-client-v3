@@ -34,7 +34,7 @@ const Users = () => {
   const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/users`)
+    fetch(`https://parcel-pro-server.vercel.app/users`)
       .then((res) => res.json())
       .then((data) => setAllUsers(data))
       .catch((err) => console.error("Error", err));

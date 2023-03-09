@@ -43,7 +43,7 @@ const CrewCard = ({ crewCard }) => {
       state: "request",
     };
 
-    fetch(`http://localhost:8080/riders`, {
+    fetch(`https://parcel-pro-server.vercel.app/riders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -40,7 +40,9 @@ const BikeRider = () => {
   const { data: orders = [] } = useQuery({
     queryKey: [],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:8080/biker_orders`);
+      const res = await fetch(
+        `https://parcel-pro-server.vercel.app/biker_orders`
+      );
       const data = await res.json();
       if (data) {
         toast.success("Order Accepted !!", {

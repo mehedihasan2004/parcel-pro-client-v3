@@ -98,31 +98,33 @@ const Navbar = (props) => {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <NavLink to="/">
-              <Button style={{ color: "#ffffff", textDecoration: 'none' }}>Home</Button>
+              <Button style={{ color: "#ffffff", textDecoration: "none" }}>
+                Home
+              </Button>
             </NavLink>
             <NavLink to="/about_us">
-              <Button sx={{ color: "#ffffff", }}>About Us</Button>
+              <Button sx={{ color: "#ffffff" }}>About Us</Button>
             </NavLink>
             <NavLink to="/about_us_careers">
-              <Button sx={{ color: "#ffffff", }}>Careers</Button>
+              <Button sx={{ color: "#ffffff" }}>Careers</Button>
             </NavLink>
             <NavLink to="/contact">
-              <Button sx={{ color: "primary.text" }}>Contact</Button>
+              <Button sx={{ color: "#ffffff" }}>Contact</Button>
             </NavLink>
             <NavLink to="/dashboard">
-              <Button sx={{ color: "#ffffff", }}>Dashboard</Button>
+              <Button sx={{ color: "#ffffff" }}>Dashboard</Button>
             </NavLink>
 
             <NavLink to="/blog">
-              <Button sx={{ color: "primary.text" }}>Blog</Button>
+              <Button sx={{ color: "#ffffff" }}>Blog</Button>
             </NavLink>
             {user ? (
               <NavLink onClick={logout} to="/">
-                <Button sx={{ color: "#ffffff", }}>Logout</Button>
+                <Button sx={{ color: "#ffffff" }}>Logout</Button>
               </NavLink>
             ) : (
               <NavLink to="/login">
-                <Button sx={{ color: "#ffffff", }}>Login</Button>
+                <Button sx={{ color: "#ffffff" }}>Login</Button>
               </NavLink>
             )}
           </Box>
