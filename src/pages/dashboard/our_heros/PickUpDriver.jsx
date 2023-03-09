@@ -39,13 +39,26 @@ const PickUpDriver = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch("https://parcel-pro-server.vercel.app/pickup_orders")
+    fetch("http://localhost:8080/pickup_orders")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
       })
       .catch((err) => console.log(err));
   }, []);
+
+  const acceptOrder = (order) => {
+    toast.success("Order Accepted !!", {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
 
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
@@ -64,20 +77,25 @@ const PickUpDriver = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {orders.map((row) => {
+            {orders.map((order) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                  <TableCell>{row.sender_email}</TableCell>
-                  <TableCell>{row.payment_method}</TableCell>
+                <TableRow hover role="checkbox" tabIndex={-1} key={order.code}>
+                  <TableCell>{order.sender_email}</TableCell>
+                  <TableCell>{order.payment_method}</TableCell>
                   <TableCell style={{ textAlign: "center" }}>
-                    {row.product_weight}
+                    {order.product_weight}
                   </TableCell>
                   <TableCell style={{ textAlign: "center" }}>
-                    {row.state}
+                    {order.state}
                   </TableCell>
                   <TableCell style={{ textAlign: "center" }}>
                     {" "}
-                    <Button variant="outlined">Accept</Button>
+                    <Button
+                      onClick={() => acceptOrder(order)}
+                      variant="outlined"
+                    >
+                      Accept
+                    </Button>
                   </TableCell>
                 </TableRow>
               );

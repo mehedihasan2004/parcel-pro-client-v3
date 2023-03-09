@@ -39,13 +39,26 @@ const CycleRider = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch("https://parcel-pro-server.vercel.app/cyclist_orders")
+    fetch("http://localhost:8080/cyclist_orders")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
       })
       .catch((err) => console.log(err));
   }, []);
+
+  const handleAccept = (order) => {
+    toast.success("Order Accepted !!", {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
 
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
@@ -77,7 +90,12 @@ const CycleRider = () => {
                   </TableCell>
                   <TableCell style={{ textAlign: "center" }}>
                     {" "}
-                    <Button variant="outlined">Accept</Button>
+                    <Button
+                      onClick={() => handleAccept(row)}
+                      variant="outlined"
+                    >
+                      Accept
+                    </Button>
                   </TableCell>
                 </TableRow>
               );

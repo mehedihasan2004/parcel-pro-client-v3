@@ -72,12 +72,12 @@ export default function Sidebar() {
   const [isAdmin] = useAdmin(user?.email);
 
   const { data: rider = [] } = useQuery({
-    queryKey: ["user"],
+    queryKey: [user?.email],
     queryFn: async () => {
       const res = await fetch(
-        `https://parcel-pro-server.vercel.app/rider?email=${user?.email}`
+        `http://localhost:8080/rider?email=${user?.email}`
       );
-      const data = res.json();
+      const data = await res.json();
       return data;
     },
   });
@@ -211,6 +211,33 @@ export default function Sidebar() {
                 </ListItemIcon>
                 <ListItemText
                   primary={"Users"}
+                  sx={{ opacity: open ? 1 : 0 }}
+                />
+              </ListItemButton>
+            </ListItem>
+            <ListItem
+              disablePadding
+              sx={{ display: "block" }}
+              onClick={() => navigate("/dashboard/riders")}
+            >
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  <InboxIcon />
+                </ListItemIcon>
+                <ListItemText
+                  primary={"Riders"}
                   sx={{ opacity: open ? 1 : 0 }}
                 />
               </ListItemButton>

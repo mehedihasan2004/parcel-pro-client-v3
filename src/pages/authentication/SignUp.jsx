@@ -1,11 +1,13 @@
 import { MenuItem, Select } from "@mui/material";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthProvider";
+import { auth } from "../../firebase/firebase.config";
 
 const SignUp = () => {
   const { signUp, updateUser, navigate, from } = useAuthContext();
-
+  const provider = new GoogleAuthProvider();
   const [user_category, setUserCategory] = useState("");
 
   const handleSubmit = (e) => {
@@ -30,8 +32,14 @@ const SignUp = () => {
       .catch((err) => console.error("Error", err));
   };
 
+  const googleLogin = () => {
+    signInWithPopup(auth, provider)
+      .then(() => {})
+      .catch((err) => console.error("Error", err));
+  };
+
   const saveUserToDB = (userName, email, imageUrl, password, user_category) => {
-    fetch("https://parcel-pro-server.vercel.app/users", {
+    fetch("http://localhost:8080/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -166,6 +174,8 @@ const SignUp = () => {
             </Link>
           </p>
         </form>
+        <div>Or</div>
+        <button onClick={googleLogin}>Continue With Google</button>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ const ParcelInfo = () => {
     const receiver_location = from.receiver_location.value;
     const product_weight = from.product_weight.value;
 
-    fetch(`https://parcel-pro-server.vercel.app/parcel_info`, {
+    fetch(`http://localhost:8080/parcel_info`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const ParcelInfo = () => {
             theme: "dark",
           });
         }
-        // navigate("/dashboard");
+        navigate("/dashboard");
       })
       .catch((err) => console.error(err));
   };
