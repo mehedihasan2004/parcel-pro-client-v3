@@ -21,7 +21,7 @@ const FreightCalculate = () => {
       >
         <Box>
           <img
-            src={truck}
+            src='https://img.freepik.com/free-vector/logistics-concept-illustration_114360-1988.jpg?w=826&t=st=1678311091~exp=1678311691~hmac=4bd9d36aafcd6b239ad0dfd33d15489d8ff9d725aa01da52dea9ec0a374b822b'
             style={{ width: "600px", height: "500px" }}
             alt="/"
           />

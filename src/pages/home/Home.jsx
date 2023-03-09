@@ -17,6 +17,7 @@ import {
   YourExpectation,
   YourQueries,
 } from ".";
+import TruckAnimation from "./TruckAnimation";
 import TryCartogon from "./TryCartogon";
 
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
       <Container>
         <BestServices />
       </Container>
+      <TruckAnimation/>
       <Container>
         <WeDeliver />
         <Container>

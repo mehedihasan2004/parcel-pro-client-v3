@@ -20,7 +20,7 @@ const RecentArticles = () => {
         paddingTop:'30px'
       }}>
         <Grid item xs={12} md={6} lg={4} sm={6}>
-        <img  src={article1}  alt="" style={{height:'240px'}}/>
+        <img  src='https://rcc-containers.com/wp-content/uploads/2022/12/transport-1.jpg'  alt="" style={{height:'240px'}}/>
        <h3 style={{
         padding: "0px",
        }}>Swift Delivery</h3>
@@ -30,7 +30,7 @@ const RecentArticles = () => {
        <Button variant="outlined">Read More <ArrowForwardIcon/></Button>
         </Grid>
         <Grid item xs={12} md={6} lg={4} sm={6}>
-        <img  src={article2} alt="" style={{height:'240px'}}/>
+        <img  src='https://www.searates.com/design/images/import/blog/0.37965200_1590129953.jpg' alt="" style={{height:'240px'}}/>
        <h3 style={{
         padding: "0px",
        }}>Trusted Service
@@ -41,7 +41,7 @@ const RecentArticles = () => {
        <Button variant="outlined">Read More <ArrowForwardIcon/></Button>
         </Grid>
         <Grid item xs={12} md={6} lg={4} sm={6}>
-        <img  src={article3} alt="" style={{height:'240px'}}/>
+        <img  src='https://uptodatewebdesign.s3.eu-west-3.amazonaws.com/uploads/SV%20ECDC%20bewerkt-1660726487004.jpeg' alt="" style={{height:'240px'}}/>
        <h3 style={{
         padding: "0px",
        }}>Vaccinated Courier
