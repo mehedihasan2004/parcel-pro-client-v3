@@ -27,8 +27,7 @@ const WeDeliver = () => {
           We Deliver Everything
         </h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper.
+          Do you have packages? Count on us, We will make you money and time worth!
         </p>
       </Box>
       <Grid
@@ -67,7 +66,7 @@ const WeDeliver = () => {
                 padding: "0px",
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              We deliver food and dringks.
             </p>
             <Link to="/online-way">
               <Button variant="contained" sx={{ m: 0 }}>
@@ -104,7 +103,7 @@ const WeDeliver = () => {
                 padding: "0px",
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              All kinds of light packeges we recieve and deliver to your desired person.
             </p>
             <Link to="/online-way">
               <Button variant="contained" sx={{ m: 0 }}>
@@ -141,7 +140,7 @@ const WeDeliver = () => {
                 padding: "0px",
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              All grocceries and handy items included in our services.
             </p>
             <Link to="/online-way">
               <Button variant="contained" sx={{ m: 0 }}>

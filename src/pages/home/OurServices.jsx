@@ -75,7 +75,7 @@ const OurServices = () => {
               padding: "0px",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            We delivery swiftly, we promise.
           </p>
         </Grid>
         <Grid item xs={12} md={6} lg={3} sm={6}>
@@ -92,7 +92,7 @@ const OurServices = () => {
               padding: "0px",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Your trust is our Capital, We value your trust on us. 
           </p>
         </Grid>
         <Grid item xs={12} md={6} lg={3} sm={6}>
@@ -109,7 +109,7 @@ const OurServices = () => {
               padding: "0px",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Our service man all are Vaccinated so dont worry any kind of virus infectionis.
           </p>
         </Grid>
         <Grid item xs={12} md={6} lg={3} sm={6}>
@@ -126,7 +126,7 @@ const OurServices = () => {
               padding: "0px",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            We follow all policies and safely measurement that governement ordered to follow. Rely on our safety first policies. 
           </p>
         </Grid>
       </Grid>

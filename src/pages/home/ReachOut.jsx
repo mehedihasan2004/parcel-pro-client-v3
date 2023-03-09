@@ -21,7 +21,7 @@ const ReachOut = () => {
           </Typography>
 
           <Typography variant='string' gutterBottom>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            Please subcribe our news letter to get updated. We send you email about details of our activities and discussion for the betterment of our services. 
           </Typography>
           <br />
           <TextField style={{ width: '70%', marginRight: '10px', marginTop: '20px' }} id="outlined-basic" label="Email address" variant="outlined" />

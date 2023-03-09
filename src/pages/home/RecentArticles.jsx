@@ -26,7 +26,7 @@ const RecentArticles = () => {
        }}>Swift Delivery</h3>
        <p style={{
         padding: "0px",
-       }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+       }}>Rely on us to get goods delivery swiftly.</p>
        <Button variant="outlined">Read More <ArrowForwardIcon/></Button>
         </Grid>
         <Grid item xs={12} md={6} lg={4} sm={6}>
@@ -37,7 +37,7 @@ const RecentArticles = () => {
        </h3>
        <p style={{
         padding: "0px",
-       }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+       }}>We are trusted partner of you. So trust and lets carry out task accordingly.</p>
        <Button variant="outlined">Read More <ArrowForwardIcon/></Button>
         </Grid>
         <Grid item xs={12} md={6} lg={4} sm={6}>
@@ -48,7 +48,7 @@ const RecentArticles = () => {
        </h3>
        <p style={{
         padding: "0px",
-       }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+       }}>All delivery men are vaccinated. So dont fear of infections.</p>
        <Button variant="outlined">Read More <ArrowForwardIcon/></Button>
         </Grid>
        
