@@ -43,7 +43,7 @@ const MyOrders = () => {
   const [myOrders, setMyOrders] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/my_orders?email=${user?.email}`)
+    fetch(`https://parcel-pro-server.vercel.app/my_orders?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyOrders(data))
       .catch((err) => console.error("Error", err));

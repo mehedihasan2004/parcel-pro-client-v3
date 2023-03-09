@@ -40,14 +40,14 @@ const Riders = () => {
   const { data: riders = [] } = useQuery({
     queryKey: [""],
     queryFn: async () => {
-      const res = await fetch("http://localhost:8080/riders");
+      const res = await fetch("https://parcel-pro-server.vercel.app/riders");
       const data = res.json();
       return data;
     },
   });
 
   const updateState = (id) => {
-    fetch(`http://localhost:8080/riders/${id}`, {
+    fetch(`https://parcel-pro-server.vercel.app/riders/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
