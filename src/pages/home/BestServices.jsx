@@ -3,6 +3,14 @@ import { Box, } from '@mui/system';
 import { Typography, Grid } from '@mui/material';
 import EastIcon from '@mui/icons-material/East';
 import Container from '@mui/material/Container';
+import AirplanemodeActiveRoundedIcon from '@mui/icons-material/AirplanemodeActiveRounded';
+import LocalShippingRoundedIcon from '@mui/icons-material/LocalShippingRounded';
+import ShareLocationRoundedIcon from '@mui/icons-material/ShareLocationRounded';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ArticleIcon from '@mui/icons-material/Article';
+import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
+import RouterIcon from '@mui/icons-material/Router';
+import SailingIcon from '@mui/icons-material/Sailing';
 
 const BestServices = () => {
     return (
@@ -34,7 +42,8 @@ const BestServices = () => {
                             }}
                         >
                             <Typography variant='h4'>01</Typography>
-                            <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/8.svg" alt="" />
+                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/8.svg" alt="" /> */}
+                            <AirplanemodeActiveRoundedIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
                             {/* <Typography variant='h5' color={'primary'}></Typography> */}
                             <Box sx={{
                                 // display: 'flex',
@@ -55,7 +64,8 @@ const BestServices = () => {
                             }}
                         >
                             <Typography variant='h4'>02</Typography>
-                            <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/7.svg" alt="" />
+                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/7.svg" alt="" /> */}
+                            <SailingIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
                             {/* <Typography variant='h5' color={'primary'}></Typography> */}
                             <Box sx={{
                                 // display: 'flex',
@@ -76,7 +86,9 @@ const BestServices = () => {
                             }}
                         >
                             <Typography variant='h4'>03</Typography>
-                            <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/6.svg" alt="" />
+                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/6.svg" alt="" /> */}
+                            <LocalShippingRoundedIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
+
                             {/* <Typography variant='h5' color={'primary'}></Typography> */}
                             <Box sx={{
                                 // display: 'flex',
@@ -97,7 +109,8 @@ const BestServices = () => {
                             }}
                         >
                             <Typography variant='h4'>04</Typography>
-                            <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/5.svg" alt="" />
+                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/5.svg" alt="" /> */}
+                            <ShareLocationRoundedIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
                             {/* <Typography variant='h5' color={'primary'}></Typography> */}
                             <Box sx={{
                                 // display: 'flex',
@@ -118,7 +131,8 @@ const BestServices = () => {
                             }}
                         >
                             <Typography variant='h4'>05</Typography>
-                            <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/3.svg" alt="" />
+                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/3.svg" alt="" /> */}
+                            <ShoppingCartIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
                             {/* <Typography variant='h5' color={'primary'}></Typography> */}
                             <Box sx={{
                                 // display: 'flex',
@@ -139,7 +153,8 @@ const BestServices = () => {
                             }}
                         >
                             <Typography variant='h4'>06</Typography>
-                            <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/2.svg" alt="" />
+                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/2.svg" alt="" /> */}
+                            <ArticleIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
                             {/* <Typography variant='h5' color={'primary'}></Typography> */}
                             <Box sx={{
                                 // display: 'flex',
@@ -160,7 +175,8 @@ const BestServices = () => {
                             }}
                         >
                             <Typography variant='h4'>07</Typography>
-                            <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/1.svg" alt="" />
+                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/1.svg" alt="" /> */}
+                            <DeliveryDiningIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
                             {/* <Typography variant='h5' color={'primary'}></Typography> */}
                             <Box sx={{
                                 // display: 'flex',
@@ -181,7 +197,8 @@ const BestServices = () => {
                             }}
                         >
                             <Typography variant='h4'>08</Typography>
-                            <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/4.svg" alt="" />
+                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/4.svg" alt="" /> */}
+                            <RouterIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
                             {/* <Typography variant='h5' color={'primary'}></Typography> */}
                             <Box sx={{
                                 // display: 'flex',

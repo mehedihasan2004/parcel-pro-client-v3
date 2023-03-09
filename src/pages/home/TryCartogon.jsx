@@ -23,8 +23,8 @@ const TryCartogon = () => {
           Contact
         </Typography>
         <Typography variant="h4" gutterBottom>
-          Try Cartogon{" "}
-          <span style={{ fontWeight: "bold", color: "yellow" }}>Today</span>
+          Try ParcelPro{" "}
+          <span style={{ fontWeight: "bold", color: "primary" }}>Today</span>
         </Typography>
         <p
           style={{

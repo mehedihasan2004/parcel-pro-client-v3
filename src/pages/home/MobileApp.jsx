@@ -28,17 +28,17 @@ const MobileApp = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies tincidunt nulla vel cursus. Fusce egestas quis est non feugiat. Maecenas faucibus nunc in enim fringilla semper.
                 </Typography>
                 <Box sx={{marginTop: '30px'}}>
-                    <Box  style={{display: 'flex', height: '30px', width: '250px', justifyContent: 'center', alignItems: 'center', gap: '10px', marginTop: '20px'}}>
-                        <CurrencyExchangeIcon style={{color: '#582f0e', fontSize: '40px'}}/>
+                    <Box  style={{display: 'flex', height: '30px', width: '250px', justifyContent: "space-between", alignItems: 'center', gap: '10px', marginTop: '20px'}}>
+                        <CurrencyExchangeIcon style={{color: '#0076BE', fontSize: '40px'}}/>
                         <Typography variant='h5'>Cashback Bonus</Typography>
                     </Box>
-                    <Box  style={{display: 'flex', height: '30px', width: '250px', justifyContent: 'center', alignItems: 'center', gap: '10px', marginTop: '20px'}}>
-                        <ShieldIcon style={{color: '#582f0e', fontSize: '40px'}}/>
+                    <Box  style={{display: 'flex', height: '30px', width: '250px', justifyContent: 'space-between', alignItems: 'center', gap: '10px', marginTop: '20px'}}>
+                        <ShieldIcon style={{color: '#0076BE', fontSize: '40px'}}/>
                         <Typography variant='h5'>Secure Payment</Typography>
                     </Box>
-                    <Box  style={{display: 'flex', height: '30px', width: '250px', justifyContent: 'center', alignItems: 'center', gap: '10px', marginTop: '20px'}}>
-                        <LocalShippingIcon style={{color: '#582f0e', fontSize: '40px'}}/>
-                        <Typography variant='h5'>Full Free Shipping</Typography>
+                    <Box  style={{display: 'flex', height: '30px', width: '250px', justifyContent: 'space-between', alignItems: 'center', gap: '10px', marginTop: '20px'}}>
+                        <LocalShippingIcon style={{color: '#0076BE', fontSize: '40px'}}/>
+                        <Typography variant='h5'>Secure Shipping</Typography>
                     </Box>
                 </Box>
                 <Box style={{display: 'flex', gap: '10px', margin: '20px'}}>
