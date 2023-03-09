@@ -140,7 +140,7 @@ const App = () => {
     <>
       <ThemeProvider theme={lightTheme}>
         <Navbar />
-        <div style={{ marginTop: "60px" }}>{routes}</div>
+        <div style={{ marginTop: "80px" }}>{routes}</div>
         <Footer />
         <CssBaseline />
         <ToastContainer />

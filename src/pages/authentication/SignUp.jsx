@@ -158,18 +158,19 @@ const SignUp = () => {
                 fontSize: "1rem",
                 padding: "0 1rem",
                 marginTop: "1rem",
-                backgroundColor: "cyan",
+                backgroundColor: "#0076BE",
                 border: "none",
                 borderRadius: "6px",
                 fontWeight: "bold",
                 textAlign: "center",
                 cursor: "pointer",
+                color: '#ffffff'
               }}
             />
           </div>
           <p style={{ textAlign: "center" }}>
             Already have an account{" "}
-            <Link style={{ color: "cyan" }} to="/login">
+            <Link style={{ color: "#0076BE" }} to="/login">
               Login
             </Link>
           </p>

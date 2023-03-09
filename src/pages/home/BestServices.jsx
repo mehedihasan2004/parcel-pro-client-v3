@@ -17,10 +17,10 @@ const BestServices = () => {
         <Container>
             <Box sx={{
                 width: '100%',
-                // height: '100vh',
+                
                 
             }}>
-                {/* title box  */}
+                
                 <Box sx={{
                     py: '4rem'
                 }}>
@@ -28,7 +28,7 @@ const BestServices = () => {
                     <Typography align='center' variant='h3' style={{ fontWeight: 'bold' }}>Get the best services </Typography>
                 </Box>
 
-                {/* all services  */}
+               
                 <Box>
                     <Grid container columnSpacing={2}>
                         <Grid item xs={12} md={4} lg={3}
@@ -37,18 +37,15 @@ const BestServices = () => {
                                 display: 'grid',
                                 placeItems: 'center',
                                 padding: '20px 0px',
-                                // gap: '20px',
+                                
                                 borderRadius: '10px'
                             }}
                         >
                             <Typography variant='h4'>01</Typography>
-                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/8.svg" alt="" /> */}
+                        
                             <AirplanemodeActiveRoundedIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
-                            {/* <Typography variant='h5' color={'primary'}></Typography> */}
-                            <Box sx={{
-                                // display: 'flex',
-                                // gap: '10px'
-                            }}>
+                        
+                            <Box >
                                 <Typography>AIR FREIGHT</Typography>
                                <EastIcon style={{marginLeft: '2rem '}}/>
                             </Box>
@@ -59,18 +56,15 @@ const BestServices = () => {
                                 display: 'grid',
                                 placeItems: 'center',
                                 padding: '20px 0px',
-                                // gap: '20px',
+                             
                                 borderRadius: '10px'
                             }}
                         >
                             <Typography variant='h4'>02</Typography>
-                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/7.svg" alt="" /> */}
+                            
                             <SailingIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
-                            {/* <Typography variant='h5' color={'primary'}></Typography> */}
-                            <Box sx={{
-                                // display: 'flex',
-                                // gap: '10px'
-                            }}>
+                            
+                            <Box >
                                 <Typography>SEA FREIGHT</Typography>
                                <EastIcon style={{marginLeft: '2rem '}}/>
                             </Box>
@@ -81,7 +75,7 @@ const BestServices = () => {
                                 display: 'grid',
                                 placeItems: 'center',
                                 padding: '20px 0px',
-                                // gap: '20px',
+                                
                                 borderRadius: '10px'
                             }}
                         >
@@ -89,11 +83,8 @@ const BestServices = () => {
                             {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/6.svg" alt="" /> */}
                             <LocalShippingRoundedIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
 
-                            {/* <Typography variant='h5' color={'primary'}></Typography> */}
-                            <Box sx={{
-                                // display: 'flex',
-                                // gap: '10px'
-                            }}>
+                            
+                            <Box >
                                 <Typography>GROUND FREIGHT</Typography>
                                <EastIcon style={{marginLeft: '3rem '}}/>
                             </Box>
@@ -104,18 +95,15 @@ const BestServices = () => {
                                 display: 'grid',
                                 placeItems: 'center',
                                 padding: '20px 0px',
-                                // gap: '20px',
+                                
                                 borderRadius: '10px'
                             }}
                         >
                             <Typography variant='h4'>04</Typography>
-                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/5.svg" alt="" /> */}
+                            
                             <ShareLocationRoundedIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
-                            {/* <Typography variant='h5' color={'primary'}></Typography> */}
-                            <Box sx={{
-                                // display: 'flex',
-                                // gap: '10px'
-                            }}>
+                            
+                            <Box >
                                 <Typography>TRACK & TRACE</Typography>
                                <EastIcon style={{marginLeft: '3rem '}}/>
                             </Box>
@@ -126,18 +114,15 @@ const BestServices = () => {
                                 display: 'grid',
                                 placeItems: 'center',
                                 padding: '20px 0px',
-                                // gap: '20px',
+                                
                                 borderRadius: '10px'
                             }}
                         >
                             <Typography variant='h4'>05</Typography>
-                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/3.svg" alt="" /> */}
+                            
                             <ShoppingCartIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
-                            {/* <Typography variant='h5' color={'primary'}></Typography> */}
-                            <Box sx={{
-                                // display: 'flex',
-                                // gap: '10px'
-                            }}>
+                            
+                            <Box >
                                 <Typography>WARE-HOUSING</Typography>
                                <EastIcon style={{marginLeft: '2.5rem '}}/>
                             </Box>
@@ -148,18 +133,15 @@ const BestServices = () => {
                                 display: 'grid',
                                 placeItems: 'center',
                                 padding: '20px 0px',
-                                // gap: '20px',
+                                
                                 borderRadius: '10px'
                             }}
                         >
                             <Typography variant='h4'>06</Typography>
-                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/2.svg" alt="" /> */}
+                            
                             <ArticleIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
-                            {/* <Typography variant='h5' color={'primary'}></Typography> */}
-                            <Box sx={{
-                                // display: 'flex',
-                                // gap: '10px'
-                            }}>
+                            
+                            <Box >
                                 <Typography>PROJECT LOGISTICS</Typography>
                                <EastIcon style={{marginLeft: '4rem '}}/>
                             </Box>
@@ -170,18 +152,15 @@ const BestServices = () => {
                                 display: 'grid',
                                 placeItems: 'center',
                                 padding: '20px 0px',
-                                // gap: '20px',
+                                
                                 borderRadius: '10px'
                             }}
                         >
                             <Typography variant='h4'>07</Typography>
-                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/1.svg" alt="" /> */}
+                            
                             <DeliveryDiningIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
-                            {/* <Typography variant='h5' color={'primary'}></Typography> */}
-                            <Box sx={{
-                                // display: 'flex',
-                                // gap: '10px'
-                            }}>
+                            
+                            <Box >
                                 <Typography>COURIER SHIPPING</Typography>
                                <EastIcon style={{marginLeft: '4rem '}}/>
                             </Box>
@@ -192,18 +171,15 @@ const BestServices = () => {
                                 display: 'grid',
                                 placeItems: 'center',
                                 padding: '20px 0px',
-                                // gap: '20px',
+                                
                                 borderRadius: '10px'
                             }}
                         >
                             <Typography variant='h4'>08</Typography>
-                            {/* <img style={{width: '10rem'}} src="https://meetmighty.com/wp-themes/cargoton/wp-content/uploads/2021/04/4.svg" alt="" /> */}
+                            
                             <RouterIcon style={{color: '#0076BE', fontSize: '8rem'}}/>
-                            {/* <Typography variant='h5' color={'primary'}></Typography> */}
-                            <Box sx={{
-                                // display: 'flex',
-                                // gap: '10px'
-                            }}>
+                            
+                            <Box >
                                 <Typography>DRONE FREIGHT</Typography>
                                <EastIcon style={{marginLeft: '4rem '}}/>
                             </Box>
